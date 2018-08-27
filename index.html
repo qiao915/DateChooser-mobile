@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/time.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/stary.min.css"/>
+	</head>
+	<body>
+		<div class="box">
+			<span id="selectDate">点我选择时间</span>
+			<p>时间格式一：<span id="time1"></span></p>
+			<p>时间格式二：<span id="time2"></span></p>
+			<p>时间格式三：<span id="time3"></span></p>
+		</div>
+		<script type="text/javascript">
+			console.log("%c邮箱  %cqiao_915@yeah.net%c  欢迎技术交流探讨","text-shadow:none"," text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:3em","text-shadow:none");
+			onload=function(){
+				var prams={
+			     	Year:true,//是否显示年//
+			        Month:true,//是否显示月//
+			        Day:true,//是否显示日//
+			        Hour:true,//是否显示小时//
+			        Minute:true,//是否显示分钟//
+			        Seconds:true,//是否显示秒//
+			        yyyy:'1992',//当前显示年
+					mm:"09",//当前显示月
+					dd:"08",//当前显示日
+					h:"07",//当前显示小时
+					m:"06",//当前显示分
+					s:"05",//当前显示秒
+					startYear:'1900',//开始年份//
+					endYear:'2020',//结束年份//
+					title:'请选择时间',  //title显示//
+		       }
+				$("#selectDate").timeSelect(prams,{
+	                okfun:function(ui){ 
+	                	console.log(ui)
+	                	$('#time1').html(ui.opt.val)
+	                	var dat = ui.opt.yyyy + '年' + ui.opt.mm + '月' + ui.opt.dd + '日  ' + ui.opt.h + '时' + ui.opt.m + '分' + ui.opt.s + '秒'
+	                	var dat2 = ui.opt.yyyy + '/' + ui.opt.mm + '/' + ui.opt.dd + '  ' + ui.opt.h + '/' + ui.opt.m + '/' + ui.opt.s
+	                	$('#time2').html(dat)
+	                	$('#time3').html(dat2)
+	                }
+	            });
+			}
+		</script>
+	</body>
+</html>
