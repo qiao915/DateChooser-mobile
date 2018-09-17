@@ -149,9 +149,6 @@
       align-items: center;
       padding: 15px 15px 0;
     }
-    .df-persp .df-final {
-      display: none;
-    }
     .df-persp .df-btn div {
       color: #333;
       cursor: pointer;
